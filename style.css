@@ -1,3 +1,14 @@
 body{
-    background-color: #A2D2FF
+    background: linear-gradient(#A2D2FF, #BDE0FE);
 }
+
+.background{
+    display: flex;
+    position: absolute;
+}
+
+.stars{
+    display: flex;
+    position: absolute;
+}
+
