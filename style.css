@@ -40,6 +40,7 @@ body{
     position: absolute;
     width: 100%;
     transform: translateY(-2%);
+    z-index:0;
 
 }
 
@@ -53,7 +54,7 @@ body{
     opacity: 0;
 }
 
-.character:hover .lips{
+.lips:hover{
     opacity: 1;
 }
 
@@ -61,20 +62,25 @@ body{
     display: flex;
     position: absolute;
     width: 100%;
+    z-index:-2;
 }
 
 .moon{
     position: absolute;
     width: 20%;
     transform: translateX(380%) translateY(60%) scale(1);
-    z-index: -1;
+    z-index: 4;
     animation-name: moon-movement;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    transition-property: transform;
+    transition-duration: 2s;
 }
 
-
+.moon:hover{
+    transform:scale(0.5);
+}
 
 @keyframes moon-movement{
     from{transform: translateX(380%) translateY(60%) rotate(0deg) }
@@ -86,7 +92,7 @@ body{
     position: absolute;
     width: 20%;
     transform: translateX(30%) translateY(150%);
-    z-index: -1;
+    z-index: 2;
     animation-name: earth-movement;
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -111,21 +117,18 @@ body{
     to{transform:  translateX(10%)}
 }*/
 
-.fuse{
+.rocket{
     position: absolute;
     width: 15%;
     transform: translateX(-100%) translateY(-10%) rotate(120deg) scale(1);
-    z-index: -1;
+    z-index: -2;
     animation-name: fuse-movement;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    transition-property: transform; 
+    transition-duration: 2s; 
 }
 
-.fuse:hover{
-    transform: scale(2);
-}
 
 @keyframes fuse-movement{
     from{transform: translateX(-120%) translateY(-60%) rotate(120deg)}
@@ -135,8 +138,76 @@ body{
 
 .video{
     position: absolute;
-
+    width: 37%;
+    transform: translateX(81%) translateY(70%);
+    z-index: -2;
 }
 
+/* BOUTONS */
+.boutons{
+    position: absolute;
+    width:100%;
+}
+
+.play{
+    position: absolute;
+    z-index: 5;
+    width: 4%;
+    transform: translateX(870%) translateY(630%);
+    transition-duration: 1s;
+}
+
+.play:hover{
+    transform: translateX(870%) translateY(620%) scale(1.2) rotate(10deg);
+    filter: contrast(120%)
+}
+
+.pause{
+    position: absolute;
+    z-index: 5;
+    width: 4%;
+    transform: translateX(1165%) translateY(690%);
+    transition-duration: 1s;
+}
+
+.pause:hover{
+    transform: translateX(1170%) translateY(690%) scale(1.2) rotate(-10deg);
+    filter: contrast(120%)
+}
+
+.stop{
+    position: absolute;
+    z-index: 5;
+    width: 4%;
+    transform: translateX(1470%) translateY(640%);
+    transition-duration: 1s;
+}
+
+.stop:hover{
+    transform: translateX(1470%) translateY(640%) scale(1.2) rotate(10deg);
+    filter: contrast(120%)
+}
+
+/* BARRE CHARGEMENT */
+
+
+.progres{
+    position: absolute;
+    transform: translateX(112%) translateY(600%);
+    width: 30%;
+    height: 1%;
+    background-color: white;
+    border-radius: 25px;
+  }
+
+  .barre {
+    position: relative;
+    width: 100%;
+    height: 100%;    
+    background-color: black;
+    transform-origin: 0 80%;
+    transition: transform 0.5s linear;
+    border-radius: 25px;
+  }
 
 
