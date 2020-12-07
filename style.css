@@ -8,7 +8,6 @@ body{
 }
 
 .background{
-    display: flex;
     position: absolute;
     width: 100%;
     z-index: -3;
@@ -40,7 +39,7 @@ body{
     position: absolute;
     width: 100%;
     transform: translateY(-2%);
-    z-index:0;
+    z-index:-1;
 
 }
 
@@ -52,6 +51,7 @@ body{
     transition-property: opacity;
     transition-duration: 2s;
     opacity: 0;
+    z-index: 2;
 }
 
 .lips:hover{
@@ -66,6 +66,7 @@ body{
 }
 
 .moon{
+    display: flex;
     position: absolute;
     width: 20%;
     transform: translateX(380%) translateY(60%) scale(1);
@@ -74,12 +75,11 @@ body{
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    transition-property: transform;
     transition-duration: 2s;
 }
 
 .moon:hover{
-    transform:scale(0.5);
+    transform:scale(10);
 }
 
 @keyframes moon-movement{
@@ -89,6 +89,7 @@ body{
 
 
 .earth{
+    display: flex;
     position: absolute;
     width: 20%;
     transform: translateX(30%) translateY(150%);
@@ -104,25 +105,21 @@ body{
     to{transform: translateX(30%) translateY(150%) rotate(0deg) }
 }
 
-/*.planets_translation{
-    animation-name: planets-translation;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+.line1{
+    position: absolute;
+    width: 120px;
+    height: 10px;
+    background-color: white;
+    opacity: 0.3;
+    border-radius: 15px;
 }
-
-@keyframes planets-translation{
-    from{transform: translateX(0%) }
-    to{transform:  translateX(10%)}
-}*/
 
 .rocket{
     position: absolute;
     width: 15%;
     transform: translateX(-100%) translateY(-10%) rotate(120deg) scale(1);
     z-index: -2;
-    animation-name: fuse-movement;
+    animation-name: rocket-movement;
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -130,11 +127,12 @@ body{
 }
 
 
-@keyframes fuse-movement{
+@keyframes rocket-movement{
     from{transform: translateX(-120%) translateY(-60%) rotate(120deg)}
     to{transform: translateX(740%) translateY(200%) rotate(140deg) }
 }
 
+/* VIDÉOS */
 
 .video{
     position: absolute;
@@ -143,7 +141,15 @@ body{
     z-index: -2;
 }
 
+.endingtext{
+    position: absolute;
+    transform: translateY(70%) translateX(65%);
+    z-index: 4;
+}
+
+
 /* BOUTONS */
+
 .boutons{
     position: absolute;
     width:100%;
@@ -159,8 +165,17 @@ body{
 
 .play:hover{
     transform: translateX(870%) translateY(620%) scale(1.2) rotate(10deg);
-    filter: contrast(120%)
+    filter: contrast(170%);
 }
+
+.play:active{
+    filter: grayscale(70%);
+}
+
+.play:focus{
+    filter: blur(3px);
+}
+
 
 .pause{
     position: absolute;
@@ -172,7 +187,15 @@ body{
 
 .pause:hover{
     transform: translateX(1170%) translateY(690%) scale(1.2) rotate(-10deg);
-    filter: contrast(120%)
+    filter: contrast(170%)
+}
+
+.pause:active{
+    filter: grayscale(70%);
+}
+
+.pause:focus{
+    filter: blur(3px);
 }
 
 .stop{
@@ -185,11 +208,54 @@ body{
 
 .stop:hover{
     transform: translateX(1470%) translateY(640%) scale(1.2) rotate(10deg);
-    filter: contrast(120%)
+    filter: contrast(170%)
 }
 
-/* BARRE CHARGEMENT */
+.stop:active{
+    filter: grayscale(70%);
+}
 
+.stop:focus{
+    filter: blur(3px);
+}
+
+.volumeplus{
+    width: 50%;
+    position: absolute;
+    z-index: 5;
+    transform: translateX(122%) translateY(-20%) scale(.2);
+    transition-duration: 1s;
+}
+
+.volumeplus:hover{
+    transform: translateX(122%) translateY(-20%) scale(.3) rotate(-10deg);
+    filter: contrast(170%)
+}
+
+.volumeplus:active{
+    filter: grayscale(70%);
+}
+
+.volumeless{
+    width: 50%;
+    position: absolute;
+    z-index: 5;
+    transform: translateX(-17%) translateY(5%) scale(.2);
+    transition-duration: 1s;
+}
+
+.volumeless:hover{
+    transform: translateX(-17%) translateY(5%) scale(.3) rotate(10deg);
+    filter: contrast(170%)
+}
+
+.volumeless:active{
+    filter: grayscale(70%);
+}
+
+
+
+/* BARRE CHARGEMENT */
 
 .progres{
     position: absolute;
@@ -198,16 +264,42 @@ body{
     height: 1%;
     background-color: white;
     border-radius: 25px;
-  }
+}
 
-  .barre {
+.barre{
     position: relative;
     width: 100%;
     height: 100%;    
-    background-color: black;
+    background-color: #A2D2FF;
     transform-origin: 0 80%;
-    transition: transform 0.5s linear;
+    transition: transform 1s linear;
     border-radius: 25px;
   }
 
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1750px) { 
+    .character{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        transform: translateY(100%);
+        z-index:-1;
+    
+    }
+    
+    .lips{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        transform: translateY(-2%);
+        transition-property: opacity;
+        transition-duration: 2s;
+        opacity: 0;
+        z-index: 2;
+    }
+
+ }
 

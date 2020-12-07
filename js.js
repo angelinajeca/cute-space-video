@@ -3,7 +3,13 @@
 const btnplay = document.querySelector('.play');
 const btnpause = document.querySelector('.pause');
 const btnstop = document.querySelector('.stop');
+const btnvolumeless = document.querySelector('.volumeless');
+const btnvolumeplus = document.querySelector('.volumeplus');
 const video = document.querySelector('.video');
+
+let volume = 0.5;
+video.volume = volume;
+
 
 btnplay.addEventListener('click', function(){
     video.play();
@@ -16,21 +22,39 @@ btnpause.addEventListener('click', function(){
 
 btnstop.addEventListener('click', function() {
     video.pause();
-    video.currentTime;
+    video.currentTime = 0;
+  });
+
+btnvolumeplus.addEventListener('click', function(){
+    volume += 0.1;
+    if (volume > 1) {
+      volume = 1;
+    }
+    video.volume = volume;
+  });
+
+btnvolumeless.addEventListener('click', function() {
+    volume -= 0.1;
+    if (volume < 0) {
+      volume = 0;
+    }
+    video.volume = volume;
   });
 
 /* CHARGEMENT */
+
 let barre = document.querySelector(".barre");
+video.play();
 
-video.addEventListener("timeupdate", function() {
-    var fraction = video.currentTime/video.duration;
-    barre.style.transform = 'scaleX(${ratio})';
-  });
+video.addEventListener("timeupdate", () => {
+  let ratio = video.currentTime / video.duration;
+  barre.style.transform = "scaleX(" + ratio + ")";
+});
 
-/* AUTRES */
+/* ANIMATION FIN */
+const progres = document.querySelector('.progres');
+const videoText = document.querySelector('.endingtext')
 
-const rocket = document.querySelector('.rocket');
-
-rocket.addEventListener('click', function() {
-    document.getElementById("rocket").style.width = "120%";
-  });
+progres.addEventListener('transitionend', function(){
+  videoText.play();
+})
