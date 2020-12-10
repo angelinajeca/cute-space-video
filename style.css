@@ -256,7 +256,6 @@ a:after{
     cursor: pointer;
 }
 
-
 /* BOUTONS */
 
 .boutons{
@@ -280,7 +279,6 @@ a:after{
 
 .play:active{
     filter: grayscale(70%);
-
 }
 
 .play:focus{

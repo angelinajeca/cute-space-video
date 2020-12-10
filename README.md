@@ -11,5 +11,4 @@ musique "Moon" de Jin(BTS). Le chanteur se mets à la place de la lune. La lune 
 
 Merci d'avoir lu et j'espère que vous avez/allez apprécier mon projet! :)
 
-
 -Angelina De Silva Jeca

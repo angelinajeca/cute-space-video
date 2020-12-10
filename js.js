@@ -52,6 +52,7 @@ video.addEventListener("timeupdate", () => {
 });
 
 /* ANIMATION FIN */
+
 const progres = document.querySelector('.progres');
 const videoText = document.querySelector('.endingtext');
 
