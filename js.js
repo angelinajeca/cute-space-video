@@ -60,7 +60,6 @@ video.addEventListener('ended', function(){
   document.getElementById("endingtext").style.display = "block";
 });
 
-const videoEnding = function(){
-  document.getElementById("endingtext").style.display = "hidden";
-
+const videoEnding= function(){
+  document.getElementById("endingtext").style.display = "none";
 };
