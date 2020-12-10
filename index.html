@@ -10,31 +10,44 @@
 
 <body>
     <div class="container">
-        <img src="https://i.imgur.com/hIaMzFN.png" class="background">
-        <img src="https://i.imgur.com/ZUvT9ir.png" class="stars">
-        <img src="https://i.imgur.com/JYv1TcZ.png" class="character">
-        <img src="https://i.imgur.com/TtyWLHX.png" class="lips">
-        <img src="https://i.imgur.com/nyucyRZ.png" class="burst">
-        <img src="https://i.imgur.com/4cKydEK.png" class="moon">
-        <img src="https://i.imgur.com/IkMEbaJ.png" class="earth">
-        <img src="https://i.imgur.com/KOjTQOf.png" class="rocket" id="rocket">
-        <video src="https://i.imgur.com/a5uUDrE.mp4" class="video"></video>
-        <div class="boutons">
-            <img src="https://i.imgur.com/OFncYZ1.png" class="play">
-            <img src="https://i.imgur.com/mkNN1V1.png" class="pause">
-            <img src="https://i.imgur.com/3SrnkAe.png" class="stop">
-            <img src="https://i.imgur.com/cZYu4BV.png" class="volumeplus">
-            <img src="https://i.imgur.com/tzufCxv.png" class="volumeless">
+        <div class="card">
+            <video src="https://i.imgur.com/eKtdMAo.mp4" class="endingtext" id="endingtext" onclick="videoEnding();"></video>
+            <img src="https://i.imgur.com/hIaMzFN.png" class="background">
+            <img src="https://i.imgur.com/ZUvT9ir.png" class="stars">
+            <img src="https://i.imgur.com/JYv1TcZ.png" class="character">
+            <img src="https://i.imgur.com/TtyWLHX.png" class="lips">
+            <img src="https://i.imgur.com/nyucyRZ.png" class="burst">
+            <img src="https://i.imgur.com/4cKydEK.png" class="moon">
+            <img src="https://i.imgur.com/IkMEbaJ.png" class="earth">
+            <img src="https://i.imgur.com/KOjTQOf.png" class="rocket" id="rocket">
+            <video src="https://i.imgur.com/a5uUDrE.mp4" class="video"></video>
+            <div class="boutons">
+                <img src="https://i.imgur.com/OFncYZ1.png" class="play" tabindex="0">
+                <img src="https://i.imgur.com/mkNN1V1.png" class="pause" tabindex="0"> 
+                <img src="https://i.imgur.com/3SrnkAe.png" class="stop" tabindex="0"> 
+                <img src="https://i.imgur.com/cZYu4BV.png" class="volumeplus" tabindex="0"> 
+                <img src="https://i.imgur.com/tzufCxv.png" class="volumeless" tabindex="0"> 
+            </div>
+            
+            <div id="progress" class="progres" value="0" min="0">
+                <div class="barre"  min='0' max='100' value='0'></div>
+            </div>
+        
+            
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="quote">
+                        <a>Since when were the Moon <br>
+                        and the Earth this close to <br>
+                        each other?...</a>
+                    </div>
+            <img src="https://i.imgur.com/wT2wNwm.png" class="cloud1"> 
+            <img src="https://i.imgur.com/wT2wNwm.png" class="cloud2"> 
 
         </div>
-        <div class="progres">
-            <div class="barre" value="1"></div>
-        </div>
-        <div class="line1"></div>
-        <video src="https://i.imgur.com/yeKzN2X.gif" class="endingtext"></video>
-    
+
     </div>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js.js">
     </script>
 </body>

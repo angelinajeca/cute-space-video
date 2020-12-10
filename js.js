@@ -43,18 +43,24 @@ btnvolumeless.addEventListener('click', function() {
 
 /* CHARGEMENT */
 
-let barre = document.querySelector(".barre");
+let bar = document.querySelector(".barre");
 video.play();
 
 video.addEventListener("timeupdate", () => {
   let ratio = video.currentTime / video.duration;
-  barre.style.transform = "scaleX(" + ratio + ")";
+  bar.style.transform = "scaleX(" + ratio + ")";
 });
 
 /* ANIMATION FIN */
 const progres = document.querySelector('.progres');
-const videoText = document.querySelector('.endingtext')
+const videoText = document.querySelector('.endingtext');
 
-progres.addEventListener('transitionend', function(){
+video.addEventListener('ended', function(){
   videoText.play();
-})
+  document.getElementById("endingtext").style.display = "block";
+});
+
+const videoEnding = function(){
+  document.getElementById("endingtext").style.display = "hidden";
+
+};
